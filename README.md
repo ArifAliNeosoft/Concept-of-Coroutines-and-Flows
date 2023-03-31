@@ -62,12 +62,24 @@ Coroutines build upon regular functions by adding two new operations. In additio
 > The thing to remember is :
 > Coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
 
+<dl>
+  <dt>The official documentation says </dt>
+ </dl>
+ *coroutines are lightweight threads. By lightweight, it means that creating coroutines doesn’t allocate new threads. Instead, they use predefined thread pools and smart scheduling for the purpose of which task to execute next and which tasks later.*
 
 ### How do Coroutines different from threads?
 
-•	They are executed inside of a thread, so you can start many coroutines inside a single thread.
-•	coroutines are suspendable which means we can execute some instructions, pause the coroutine in the middle of execution and let it continue when we wanted to.
-•	they can easily change the context which means that a coroutine that was started in one thread can easily switch to another thread.
+-	They are executed inside of a thread, so you can start many coroutines inside a single thread.
+-	coroutines are suspendable which means we can execute some instructions, pause the coroutine in the middle of execution and let it continue when we wanted to.
+-	they can easily change the context which means that a coroutine that was started in one thread can easily switch to another thread.
+
+### Coroutine Features
+
+-	Lightweight: One can run many coroutines on a single thread due to support for suspension, which doesn’t block the thread where the coroutine is running. Suspending frees memory over blocking while supporting multiple concurrent operations.
+-	Built-in cancellation support: Cancellation is generated automatically through the running coroutine hierarchy.
+-	Fewer memory leaks: It uses structured concurrency to run operations within a scope.
+-	Jetpack integration: Many Jetpack libraries include extensions that provide full coroutines support. Some libraries also provide their own coroutine scope that one can use for structured concurrency.
+
 
 
 |             Launch                            |        Async                             | 
