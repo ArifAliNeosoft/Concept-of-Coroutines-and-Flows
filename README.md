@@ -58,15 +58,16 @@ Coroutines build upon regular functions by adding two new operations. In additio
 - suspend — pause the execution of the current coroutine, saving all local variables
 - resume — continue a suspended coroutine from the place it was paused.
 
-> According to documentation coroutines are nothing but lightweight threads.
+> <dl>
+>  <dt>The official documentation says </dt>
+> </dl> 
+> coroutines are nothing but lightweight threads.
 > 
 > The thing to remember is :
 > 
-> Coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
+>*coroutines* do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
 
-<dl>
-  <dt>The official documentation says </dt>
- </dl>
+
  *coroutines* are lightweight threads. By lightweight, it means that creating coroutines doesn’t allocate new threads. Instead, they use predefined thread pools and smart scheduling for the purpose of which task to execute next and which tasks later.*
 
 ### How do Coroutines different from threads?
