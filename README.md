@@ -59,9 +59,9 @@ Coroutines build upon regular functions by adding two new operations. In additio
 - resume — continue a suspended coroutine from the place it was paused.
 
 > <dl>
->  <dt>The official documentation says </dt>
+> <dt>The official documentation says </dt>
 >  
-> <dd>coroutines are nothing but <em>lightweight threads.</em></dd>
+><dd>coroutines are nothing but <em>lightweight threads.</em></dd>
 > </dl>
 > The thing to remember is :
 > 
