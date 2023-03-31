@@ -1,5 +1,7 @@
 # Concept-of-Coroutines-Flows
 
-| Attempt | #1    | #2    |
-| :---:   | :---: | :---: |
-| Seconds | 301   | 283   |
+| Launch       | Async       |
+| ------------- |:-------------:| 
+| col 3 is      | right-aligned | 
+| col 2 is      | centered      |  
+| zebra stripes | are neat      |   
