@@ -61,7 +61,7 @@ Coroutines build upon regular functions by adding two new operations. In additio
 > <dl>
 >  <dt>The official documentation says </dt>
 > </dl> 
-> coroutines are nothing but *lightweight* *threads*.
+> coroutines are nothing but * lightweight * * threads *.
 > 
 > The thing to remember is :
 > 
