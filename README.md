@@ -2,7 +2,7 @@
 
 ## Topics
 
-1. Asynchronous programming
+1. Asynchronous Programming
 2. coroutines Vs Coroutine
 3. coroutine Builders
 
@@ -27,6 +27,22 @@
 
 -suspendCoroutine
 -suspendCancellableCoroutine
+
+## 1. Asynchronous Programming
+
+1)User can move from one task to another task before the previous one finishes.
+2) It increases the amount of work that your app can perform in parallel.
+
+Note: Android is a single thread platform, By default, everything runs on the main thread or UI thread. Android application needs to perform some non UI operations like (Network call, I/O operations).
+If we run every task on UI thread and app will take time to complete and if app freezes more than 5 seconds then app control will get ANR (Application not responding ) Dialog which means the app is blocked and ultimately app is crashed.
+
+Many approaches to solve this problem:
+Threading , Callbacks , RxJava , Futures and Promises.
+
+But Kotlin;s recommended  ,most efficient approach to handle asynchronous code is Coroutines-
+which is the idea of suspendable computations, i.e. the idea that a function can suspend its execution at some point and resume later on.
+
+
 
 
 |             Launch                            |        Async                             | 
