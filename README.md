@@ -1,5 +1,34 @@
 # Concept-of-Coroutines
 
+## Topics
+
+1. Asynchronous programming
+2. coroutines Vs Coroutine
+3. coroutine Builders
+
+- launch{}
+- async{}
+- launch and async differences
+- runBlocking
+
+4.withContext()
+5.Dispatchers
+6.Scopes
+
+-lifecycleScope
+-viewModelScope
+-CoroutineScope
+-GlobalScope
+-supervisorScope
+
+7. contex
+8. job
+9. Cancel coroutines
+
+-suspendCoroutine
+-suspendCancellableCoroutine
+
+
 |             Launch                            |        Async                             | 
 | --------------------------------------------- | :--------------------------------------: | 
 |1)The launch nature is fire and forget.        |Async performs a task and return a result.| 
