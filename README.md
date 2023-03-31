@@ -60,9 +60,9 @@ Coroutines build upon regular functions by adding two new operations. In additio
 
 > <dl>
 >  <dt>The official documentation says </dt>
-> </dl> 
-> coroutines are nothing but >*lightweight* * threads *.
-> 
+>  
+> <dd>coroutines are nothing but <em>lightweight threads.</em></dd>
+> </dl>
 > The thing to remember is :
 > 
 > coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
