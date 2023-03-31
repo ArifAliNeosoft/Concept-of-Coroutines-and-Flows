@@ -4,7 +4,11 @@
 
 1. Asynchronous Programming
 2. Coroutines
-3. coroutine Builders
+
+- How do Coroutines different from threads?
+- Coroutine Features
+
+4. coroutine Builders
 
 - launch{}
 - async{}
@@ -52,12 +56,18 @@ Here, Co means cooperation and Routines means functions.It means that when funct
 Coroutines build upon regular functions by adding two new operations. In addition to invoke (or call) and return, coroutines add suspend and resume.
 
 - suspend — pause the execution of the current coroutine, saving all local variables
-# resume — continue a suspended coroutine from the place it was paused.
+- resume — continue a suspended coroutine from the place it was paused.
 
 > According to documentation coroutines are nothing but lightweight threads.
 > The thing to remember is :
 > Coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
 
+
+### How do Coroutines different from threads?
+
+•	They are executed inside of a thread, so you can start many coroutines inside a single thread.
+•	coroutines are suspendable which means we can execute some instructions, pause the coroutine in the middle of execution and let it continue when we wanted to.
+•	they can easily change the context which means that a coroutine that was started in one thread can easily switch to another thread.
 
 
 |             Launch                            |        Async                             | 
