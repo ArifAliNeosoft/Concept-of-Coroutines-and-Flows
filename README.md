@@ -1,4 +1,4 @@
-# Concept-of-Coroutines-Flows
+# Concept-of-Coroutines
 
 |             Launch                            |        Async                             | 
 | --------------------------------------------- | :--------------------------------------: | 
@@ -10,6 +10,8 @@
 |                                               | entry point of the await() function.     |
 |5)Other parts of the code will execute and not | Other parts of the code cannot execute   |
 |  wait for the launch result since launch is   |and have to wait for the result of the    | 
-| not a suspend call .                          | await() function.                        |            |6)launch{} can never work like async{}.        |id async{} will not wait for result- can  |
+| not a suspend call .                          | await() function.                        |
+|6)launch{} can never work like async{}.        |id async{} will not wait for result- can  |
 |  wait for the launch result since launch is   |work as launch{}                          | 
-|7)Fetch users membership rating and save into  | Fetch two products price from network /  |            |  database.                                    | databse to compare acc. to user's need.  |                        
+|7)Fetch users membership rating and save into  | Fetch two products price from network /  | 
+|  database.                                    | databse to compare acc. to user's need.  |                        
