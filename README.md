@@ -31,7 +31,7 @@
 
 ## 1. Asynchronous Programming
 
-1)User can move from one task to another task before the previous one finishes.
+1) User can move from one task to another task before the previous one finishes.
 2) It increases the amount of work that your app can perform in parallel.
 
 Note: Android is a single thread platform, By default, everything runs on the main thread or UI thread. Android application needs to perform some non UI operations like (Network call, I/O operations).
@@ -46,16 +46,18 @@ which is the idea of suspendable computations, i.e. the idea that a function can
 
 ## 2.What are Coroutines?
 
-# Coroutines =Co +Routines 
-Here, Co means cooperation and Routines means functions.
+### Coroutines =Co +Routines 
+Here, Co means cooperation and Routines means functions. 
+
 It means that when functions cooperate with each other.
+
 Coroutines build upon regular functions by adding two new operations. In addition to invoke (or call) and return, coroutines add suspend and resume.
 suspend — pause the execution of the current coroutine, saving all local variables
 resume — continue a suspended coroutine from the place it was paused.
 
-According to documentation coroutines are nothing but lightweight threads.
-The thing to remember is :
-Coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
+> According to documentation coroutines are nothing but lightweight threads.
+> The thing to remember is :
+> Coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
 
 
 
