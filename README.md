@@ -47,13 +47,12 @@ which is the idea of suspendable computations, i.e. the idea that a function can
 ## 2.What are Coroutines?
 
 ### Coroutines =Co +Routines 
-Here, Co means cooperation and Routines means functions. 
-
-It means that when functions cooperate with each other.
+Here, Co means cooperation and Routines means functions.It means that when functions cooperate with each other.
 
 Coroutines build upon regular functions by adding two new operations. In addition to invoke (or call) and return, coroutines add suspend and resume.
-suspend — pause the execution of the current coroutine, saving all local variables
-resume — continue a suspended coroutine from the place it was paused.
+
+- suspend — pause the execution of the current coroutine, saving all local variables
+# resume — continue a suspended coroutine from the place it was paused.
 
 > According to documentation coroutines are nothing but lightweight threads.
 > The thing to remember is :
