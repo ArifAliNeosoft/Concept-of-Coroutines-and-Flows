@@ -3,7 +3,7 @@
 ## Topics
 
 1. Asynchronous Programming
-2. coroutines Vs Coroutine
+2. Coroutines
 3. coroutine Builders
 
 - launch{}
@@ -15,18 +15,19 @@
 5.Dispatchers
 6.Scopes
 
--lifecycleScope
--viewModelScope
--CoroutineScope
--GlobalScope
--supervisorScope
+- lifecycleScope
+- viewModelScope
+- CoroutineScope
+- coroutineScope Vs CoroutineScope
+- GlobalScope
+- supervisorScope
 
 7. contex
 8. job
 9. Cancel coroutines
 
--suspendCoroutine
--suspendCancellableCoroutine
+- suspendCoroutine
+- suspendCancellableCoroutine
 
 ## 1. Asynchronous Programming
 
@@ -43,6 +44,14 @@ But Kotlin;s recommended  ,most efficient approach to handle asynchronous code i
 which is the idea of suspendable computations, i.e. the idea that a function can suspend its execution at some point and resume later on.
 
 
+## 2.What are Coroutines?
+
+#Coroutines =Co +Routines 
+Here, Co means cooperation and Routines means functions.
+It means that when functions cooperate with each other.
+Coroutines build upon regular functions by adding two new operations. In addition to invoke (or call) and return, coroutines add suspend and resume.
+suspend — pause the execution of the current coroutine, saving all local variables
+resume — continue a suspended coroutine from the place it was paused
 
 
 |             Launch                            |        Async                             | 
