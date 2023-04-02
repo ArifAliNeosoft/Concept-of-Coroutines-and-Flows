@@ -39,4 +39,25 @@
 |6)launch{} can never work like async{}.        |If async{} will not wait for result- can  |
 |                                               |work as launch{}                          | 
 |7)Ex:Fetch users membership rating and save    |Ex:Fetch two products price from network/ | 
-|  into database.                               | databse to compare acc. to user's need.  |       
+|  into database.                               | databse to compare acc. to user's need.  |    
+  
+  
+  CoroutineScope 
+  - An interface that consists of a sole property - val coroutineContext:CoroutineContext.
+  > Note: We must start all co-routines within scope.
+  - To keep track of coroutines lifecycle ,can cancel them and handle error or exceptions thrown by the coroutines.
+  - To predict the lifecycle of the coroutines.
+  -Acts as reference to the coroutine context.
+  
+#### GlobalScope 
+—  To launch top-level coroutines which are operating on the whole application lifetime, we can use GlobalScope.launch { }. However, this is not ideal.
+#### MainScope
+— This will launch the coroutine in the main thread (UI thread) by default when using MainScope().launch { }.
+#### CoroutineScope
+— This allows you to define a custom scope by providing your own context e.g. CoroutineScope(Dispatchers.IO).launch { }.
+#### LifecycleScope
+— This is an Android-specific coroutine scope that ties the scope Android lifecycle (i.e. ability to automatically terminate upon end of Android Activity lifecycle.
+#### ViewModelScope
+=  This scope will live as long the view model is alive.
+  
+ 
