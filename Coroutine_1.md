@@ -15,9 +15,9 @@
 - launch and async differences
 - runBlocking
 
-4.withContext()
-5.Dispatchers
-6.Scopes
+4. withContext()
+5. Dispatchers
+6. Scopes
 
 - lifecycleScope
 - viewModelScope
@@ -26,7 +26,7 @@
 - GlobalScope
 - supervisorScope
 
-7. contex
+7. CoroutineContext
 8. job
 9. Cancel coroutines
 
