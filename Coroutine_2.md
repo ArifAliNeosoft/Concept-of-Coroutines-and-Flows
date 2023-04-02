@@ -7,7 +7,7 @@
 - We can cancel launched coroutine using the cancel method available on Job.
 
 >  public fun CoroutineScope.launch(
->  context: CoroutineContext = EmptyCoroutineContext,
+> context: CoroutineContext = EmptyCoroutineContext,
 >  start: CoroutineStart = CoroutineStart.DEFAULT,
 >  block: suspend CoroutineScope.() -> Unit
 >  ): Job
