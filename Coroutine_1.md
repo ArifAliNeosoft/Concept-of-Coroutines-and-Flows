@@ -4,12 +4,10 @@
 
 1. Asynchronous Programming
 2. Coroutines
-
 - How do Coroutines different from threads?
 - Coroutine Features
 
 3. Coroutine Builders
-
 - launch{}
 - async{}
 - produce{}
@@ -20,16 +18,14 @@
 5. withContext()
 6. Dispatchers
 7. Scopes
-
 - lifecycleScope
 - viewModelScope
 - CoroutineScope
 - GlobalScope
 
-7. CoroutineContext
-8. job
-9. Cancel coroutines
-
+8. CoroutineContext
+9. job
+10. Cancel coroutines
 - suspendCoroutine
 - suspendCancellableCoroutine
 
