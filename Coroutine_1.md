@@ -16,16 +16,15 @@
 - runBlocking
 - launch and async differences
 
-4. withContext()
-5. Dispatchers
-6. Scopes
+4. Suspending Functions
+5. withContext()
+6. Dispatchers
+7. Scopes
 
 - lifecycleScope
 - viewModelScope
 - CoroutineScope
-- coroutineScope Vs CoroutineScope
 - GlobalScope
-- supervisorScope
 
 7. CoroutineContext
 8. job
