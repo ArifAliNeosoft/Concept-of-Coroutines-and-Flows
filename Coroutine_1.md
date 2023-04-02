@@ -44,7 +44,7 @@ If we run every task on UI thread and app will take time to complete and if app 
 Many approaches to solve this problem:
 Threading , Callbacks , RxJava , Futures and Promises.
 
-But Kotlin;s recommended  ,most efficient approach to handle asynchronous code is Coroutines-
+But Kotlin's recommended  ,most efficient approach to handle asynchronous code is Coroutines-
 which is the idea of suspendable computations, i.e. the idea that a function can suspend its execution at some point and resume later on.
 
 
