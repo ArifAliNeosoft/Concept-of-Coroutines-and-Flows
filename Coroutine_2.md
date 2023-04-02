@@ -48,8 +48,8 @@
 
 - #### Types of Dispatchers
   #### Main (Dispatcher.Main):
-- It starts the coroutine in the main(UI) thread. It is mostly used when we need to perform the UI operations within the coroutine, as UI can only be changed from the main thread(also called the UI thread).
-- Try to use for small light weight tasks like -go to UI function over to a suspending function or to get updates from the live data.
+  - It starts the coroutine in the main(UI) thread. It is mostly used when we need to perform the UI operations within the coroutine, as UI can only be changed from the main thread(also called the UI thread).
+  - Try to use for small light weight tasks like -go to UI function over to a suspending function or to get updates from the live data.
   
   #### IO (Dispatcher.IO):
   - Coroutine will run in a background thread from a shared pool of on-demand created threads.
