@@ -8,7 +8,7 @@
 - How do Coroutines different from threads?
 - Coroutine Features
 
-4. coroutine Builders
+3. Coroutine Builders
 
 - launch{}
 - async{}
@@ -50,7 +50,7 @@ which is the idea of suspendable computations, i.e. the idea that a function can
 
 ## 2.What are Coroutines?
 
-### Coroutines =Co +Routines 
+### Coroutines =Co + Routines 
 Here, Co means cooperation and Routines means functions.It means that when functions cooperate with each other.
 
 Coroutines build upon regular functions by adding two new operations. In addition to invoke (or call) and return, coroutines add suspend and resume.
