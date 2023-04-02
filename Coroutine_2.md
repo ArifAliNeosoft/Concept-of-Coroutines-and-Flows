@@ -50,10 +50,28 @@
 |7)Ex:Fetch users membership rating and save    |Ex:Fetch two products price from network/ | 
 |  into database.                               | databse to compare acc. to user's need.  |    
   
+## 4. Suspending Functions
+  - That can be started, paused, and resume .
+  - They are only allowed to be called from a coroutine or another suspend function.
+  - withContext ,withTimeout ,withTimeoutOrNull ,join,delay,await,supervisorScope,coroutineScope
   
-## 4. withContext
+>To make more coroutines, any suspend functions can start more coroutines by using another builder called coroutineScope or its cousin supervisorScope. 
+ 
+- coroutineScope
+  - A coroutineScope will cancel whenever any of its children fail.
+  - Use coroutineScope with the top-level try-catch, when you do NOT want to continue with other tasks if any of them have failed.
   
-## 5. Dispatchers 
+- supervisorScope
+  - A supervisorScope won't cancel other children when one of them fails.
+  - Use supervisorScope with the individual try-catch for each task, when you want to continue with other tasks if one or some of them have failed.
+  
+## 5. withContext
+  - Corutine has function using which corutine can switch between threads.
+  - It is a suspending function.
+  - one should remember that async should be used with multiple tasks and withContext should be used with a single task.
+  -  It is known when async is used, one needs to use the await() function, which leads to blocking of the main thread, but here comes the concept of withContext which removes the problem of blocking the main thread.
+  
+## 6. Dispatchers 
 - describes the kind of thread via coroutine should be run.
 > Note: in android Structured Concurrency - by the convention to start coroutines from main thread and then switch to background threads.
 
@@ -75,7 +93,7 @@
   - Coroutine will run in the current thread , but if it is suspended and resumed it will run on whichever thread suspending function is running.
   - It is not recommended to use in development.
   
-## 6. CoroutineScope 
+## 7. CoroutineScope 
   - An interface that consists of a sole property - val coroutineContext:CoroutineContext.
   > Note: We must start all co-routines within scope.
   - To keep track of coroutines lifecycle ,can cancel them and handle error or exceptions thrown by the coroutines.
