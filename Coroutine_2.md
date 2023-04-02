@@ -42,7 +42,29 @@
 |  into database.                               | databse to compare acc. to user's need.  |    
   
   
-  CoroutineScope 
+## 5. Dispatchers 
+- describes the kind of thread via coroutine should be run.
+> Note: in android Structured Concurrency - by the convention to start coroutines from main thread and then switch to background threads.
+
+- #### Types of Dispatchers
+  #### Main (Dispatcher.Main):
+- It starts the coroutine in the main(UI) thread. It is mostly used when we need to perform the UI operations within the coroutine, as UI can only be changed from the main thread(also called the UI thread).
+- Try to use for small light weight tasks like -go to UI function over to a suspending function or to get updates from the live data.
+  
+  #### IO (Dispatcher.IO):
+  - Coroutine will run in a background thread from a shared pool of on-demand created threads.
+  - It is used to perform all the data operations such as networking, reading, or writing from the database, reading, or writing to the files.
+  
+   #### Default (Dispatcher.Default):
+  - It starts a coroutine in the Default Thread ,uses a shared background pool of threads, so launch(Dispatchers.Default) { … } uses the same dispatcher as GlobalScope.launch { … }.
+  - For CPU intensive tasks such as sorting a large list of 30000 items or parsing huge JSON file with 20000 lists of movies etc.
+  
+   #### Unconfined (Dispatcher.Unconfined):
+  - Unconfined dispatcher is not confined to any specific thread.
+  - Coroutine will run in the current thread , but if it is suspended and resumed it will run on whichever thread suspending function is running.
+  - It is not recommended to use in development.
+  
+## 6. CoroutineScope 
   - An interface that consists of a sole property - val coroutineContext:CoroutineContext.
   > Note: We must start all co-routines within scope.
   - To keep track of coroutines lifecycle ,can cancel them and handle error or exceptions thrown by the coroutines.
@@ -58,6 +80,6 @@
 #### LifecycleScope
 — This is an Android-specific coroutine scope that ties the scope Android lifecycle (i.e. ability to automatically terminate upon end of Android Activity lifecycle.
 #### ViewModelScope
-=  This scope will live as long the view model is alive.
+_  This scope will live as long the view model is alive.
   
  
