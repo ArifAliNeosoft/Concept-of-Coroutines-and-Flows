@@ -68,6 +68,8 @@ Coroutines build upon regular functions by adding two new operations. In additio
 > coroutines do not replace threads, it’s more like a framework to manage concurrency in a more performant and simple way with its lightweight thread which is written > on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
 >
 >By lightweight, it means that creating coroutines doesn’t allocate new threads. Instead, they use predefined thread pools and smart scheduling for the purpose of     > which task to execute next and which tasks later.
+>
+> ### Coroutines were added to Kotlin in version 1.3
 
 
 ### How do Coroutines different from threads?
@@ -87,20 +89,4 @@ It uses structured concurrency to run operations within a scope.
 #### Jetpack integration: 
 Many Jetpack libraries include extensions that provide full coroutines support. Some libraries also provide their own coroutine scope that one can use for structured concurrency.
 
-
-
-|             Launch                            |        Async                             | 
-| --------------------------------------------- | :--------------------------------------: | 
-|1)The launch nature is fire and forget.        |Async performs a task and return a result.| 
-|2)The launch {} function returns a Job object. |An async {} returns a Deferred<T> object. |  
-|3)Parallel execution of network calls is not   |Parallel execution of network calls is    |
-| possible.                                     | possible.                                | 
-|4)launch{} will not block your main thread.    | Async will block the main thread at the  |
-|                                               | entry point of the await() function.     |
-|5)Other parts of the code will execute and not | Other parts of the code cannot execute   |
-|  wait for the launch result since launch is   |and have to wait for the result of the    | 
-| not a suspend call .                          | await() function.                        |
-|6)launch{} can never work like async{}.        |If async{} will not wait for result- can  |
-|                                               |work as launch{}                          | 
-|7)Ex:Fetch users membership rating and save    |Ex:Fetch two products price from network/ | 
-|  into database.                               | databse to compare acc. to user's need.  |                        
+                 
