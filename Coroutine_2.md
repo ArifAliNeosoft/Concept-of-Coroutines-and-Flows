@@ -60,6 +60,7 @@
 - coroutineScope
   - A coroutineScope will cancel whenever any of its children fail.
   - Use coroutineScope with the top-level try-catch, when you do NOT want to continue with other tasks if any of them have failed.
+  - This function is designed for parallel decomposition of work.
   
 - supervisorScope
   - A supervisorScope won't cancel other children when one of them fails.
