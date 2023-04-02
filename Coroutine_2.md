@@ -22,7 +22,16 @@
 >  block: suspend CoroutineScope.() -> T
 >  ): Deferred<T>
 
-
+#### produce{} :
+- Produce builder is for coroutines which produces a stream of elements.
+- Returns an instance of ReceiveChannel.
+  
+#### runBlocking{} :
+- The coroutine we create using this thread will block the thread while the coroutine is executing.
+- Returns a result of type T.
+- RunBlocking can be used for testing of the JUnit,
+  
+  
 #### Difference between lauch{} and async{}
 
 |             Launch                            |        Async                             | 
@@ -41,6 +50,8 @@
 |7)Ex:Fetch users membership rating and save    |Ex:Fetch two products price from network/ | 
 |  into database.                               | databse to compare acc. to user's need.  |    
   
+  
+## 4. withContext
   
 ## 5. Dispatchers 
 - describes the kind of thread via coroutine should be run.
