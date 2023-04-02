@@ -79,10 +79,13 @@ Coroutines build upon regular functions by adding two new operations. In additio
 ### Coroutine Features
 
 #### Lightweight: 
--One can run many coroutines on a single thread due to support for suspension, which doesn’t block the thread where the coroutine is running. Suspending frees memory     over blocking while supporting multiple concurrent operations.
--	Built-in cancellation support: Cancellation is generated automatically through the running coroutine hierarchy.
--	Fewer memory leaks: It uses structured concurrency to run operations within a scope.
--	Jetpack integration: Many Jetpack libraries include extensions that provide full coroutines support. Some libraries also provide their own coroutine scope that one can use for structured concurrency.
+One can run many coroutines on a single thread due to support for suspension,which doesn’t block the thread where the coroutine is running. Suspending frees memory    over blocking while supporting multiple concurrent operations.
+#### Built-in cancellation support: 
+Cancellation is generated automatically through the running coroutine hierarchy.
+#### Fewer memory leaks: 
+It uses structured concurrency to run operations within a scope.
+#### Jetpack integration: 
+Many Jetpack libraries include extensions that provide full coroutines support. Some libraries also provide their own coroutine scope that one can use for structured concurrency.
 
 
 
