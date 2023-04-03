@@ -64,7 +64,8 @@
     - let's convert this Callback to the Coroutines way by creating a suspend function as below:
 
 
->  suspend fun doSomething(): Result {
+>  suspend fun doSomething(): Result
+>   {
 >    return suspendCancellableCoroutine { continuation ->
 >        val id = Library.doSomething(object : Listener {
 >
