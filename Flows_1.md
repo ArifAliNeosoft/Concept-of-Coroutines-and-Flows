@@ -24,7 +24,7 @@
 -  A flow is conceptually a stream of data that can be computed asynchronously. The emitted values must be of the same type. For example, a Flow<Int> is a flow that emits integer values.
   
   #### Flow Builder -To create flows, use the flow builder APIs.
-  - ### flow {}  
+  - #### flow {}  
        - flow builder function creates a new flow.
        - using the emit function to emit new values into the stream of data.
        - Values are collected from the flow using a collect function(Collector).
@@ -48,8 +48,39 @@
 > flow.collect { value -> println(value) } 
 > }
 
-  - ## flowOf {}
+  - #### flowOf()
      - flowOf builder defines a flow that emits a fixed set of values.
+> flowOf(4, 2, 5, 1, 7)
+> .collect {
+>    Log.d(TAG, it.toString())
+> }
+  
+  - #### asFlow()
+     - It is an extension function that helps to convert type into flows.
   
 > (1..3).asFlow().collect { value -> println(value) }
+  
+  - #### channelFlow{}
+     - This builder creates flow with the elements using send provided by the builder itself.
+> 
+> channelFlow {
+>   (0..10).forEach {
+>       send(it)
+>    }
+> }
+> .collect {
+>    Log.d(TAG, it.toString())
+> }
 
+  - #### emptyFlow()
+     - It is used when we want to create an empty flow.
+> emptyFlow<Int>()
+>       .collect { print(it) }
+>
+  
+. By default, code in builders, intermediate operators and the collection itself is performed in the coroutine context that invoked the terminal operator. This property of flows is called context preservation.
+
+## 2.flowOn
+  
+  
+  
