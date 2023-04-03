@@ -105,20 +105,20 @@
 > }  
 > We will not get anything as the SharedFlow does not store the last value.
 >
-   #### NOTE:
+ - #### NOTE:
      - StateFlow is a type of SharedFlow. StateFlow is a specialization of SharedFlow.
   
-   #### UseCase For StateFlow
+ - #### UseCase For StateFlow
      - Get the list of the users from viewModel.
      - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          The List will be collected((StateFlow keeps the last value))
      - Advantage: No need for a new network call.
     
-   #### UseCase For SharedFlow
+  - #### UseCase For SharedFlow
      - Suppose we are doing a task, if that task gets failed, we have to show Snackbar.
-      - When our viewModel starts the task and gets failed. It will set the value true to Activity collector will get the value as true and show the Snackbar.
-      - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
+     - When our viewModel starts the task and gets failed. It will set the value true to Activity collector will get the value as true and show the Snackbar.
+     - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          Nothing will get collected here as SharedFlow does not keep the last value.
          And that is fine. We should not show the Snackbar again on orientation changes.
-      - Advantage: It does not show Snackbar again as intended.
+     - Advantage: It does not show Snackbar again as intended.
   
