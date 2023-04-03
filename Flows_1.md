@@ -24,8 +24,8 @@
 -  A flow is conceptually a stream of data that can be computed asynchronously. The emitted values must be of the same type. For example, a Flow<Int> is a flow that emits integer values.
   
   #### Flow Builder -To create flows, use the flow builder APIs.
-  ## flow {}  
-     - flow builder function creates a new flow.
+  ### flow {}  
+     -flow builder function creates a new flow.
        - using the emit function to emit new values into the stream of data.
        - Values are collected from the flow using a collect function(Collector).
        - Flows are cold streams similar to sequences — the code inside a flow builder does not run until the flow is collected. 
