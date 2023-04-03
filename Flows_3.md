@@ -64,10 +64,9 @@
 >        
        
    #### SharedFlow :
-   
-      - By default, it does not emit any value since it does not need an initial value.
-      - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
-      - With the replay operator, it is possible to emit many previous values at once.
+     - By default, it does not emit any value since it does not need an initial value.
+     - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
+     - With the replay operator, it is possible to emit many previous values at once.
       - It does not have a value property.
       - The emitter emits all the values without caring about the distinct differences from the previous item. It emits consecutive repeated values also.
       - It is Not similar to LiveData.     
