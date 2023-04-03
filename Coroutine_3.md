@@ -13,3 +13,45 @@
   - 1. Periodically invoke a suspending function(that belongs to kotlinx.coroutines package) that checks for cancellation, like delay(),yield(),withContext(),withTimeout() etc.
   - 2. Explicitly check for the cancellation status within the coroutine
        -CoroutineScope.isActive boolean flag.
+       
+## 11. suspendCoroutine and suspendCancellableCoroutine
+- We have many libraries in our Android Project that provides the callback way to use instead of the Coroutines way.But nowadays we used Coroutine concepts.
+- To convert any Callback to Coroutines in Kotlin we use below functions:
+#### suspendCoroutine
+
+  - Let us assume we have any Library ,which does any task and whose listener has has 2 functions to get the callback :
+  - we want to use this library in the Coroutines way.
+   
+> Library.doSomething(object : Listener {
+>   override fun onSuccess(result: Result) {
+>
+>   }
+>    override fun onError(throwable: Throwable) {
+>    
+>    }
+> })
+ 
+ - by creating a suspend function as below :
+ 
+> suspend fun doSomething(): Result {
+>    return suspendCoroutine { continuation ->
+>        Library.doSomething(object : Listener {
+>
+>            override fun onSuccess(result: Result) {
+>               continuation.resume(result)
+>            }
+>
+>            override fun onError(throwable: Throwable) {
+>                continuation.resumeWithException(throwable)
+>            }
+>
+>        })
+>    }
+> }
+
+- We have followed the following steps to convert the Callback to Coroutines in Kotlin:
+
+  - Create a suspend function to return the Result.
+  - Use suspendCoroutine as the return block.
+  - Use continuation.resume(result) for the success.
+  - Use continuation.resumeWithException(throwable) for the error. 
