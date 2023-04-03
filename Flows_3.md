@@ -19,7 +19,7 @@
 - Both are hot flows.
 
    #### StateFlow :
-      - When the collector begins collecting,an initial value is emitted.
+     - When the collector begins collecting,an initial value is emitted.
       - We can create a variable like : val stateFlow = MutableStateFlow(0)
       - The only value that is emitted is the last known value.
       - The value property allows us to check the current value. Without collecting, it keeps a history of one value that can be accessed directly.
