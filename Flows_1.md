@@ -25,11 +25,13 @@
   
   #### Flow Builder -To create flows, use the flow builder APIs.
    ### flow {}
+  
        - flow builder function creates a new flow.
        - using the emit function to emit new values into the stream of data.
        - Values are collected from the flow using a collect function(Collector).
        - Flows are cold streams similar to sequences — the code inside a flow builder does not run until the flow is collected. 
       
+  
        > fun simple(): Flow<Int> = flow { 
        > println("Flow started")
        > for (i in 1..3) {
@@ -47,7 +49,9 @@
        > flow.collect { value -> println(value) } 
        > }
 
-  ###  flowOf {}
+  ### flowOf {}
+  
+  
         - flowOf builder defines a flow that emits a fixed set of values.
   
         > (1..3).asFlow().collect { value -> println(value) }
