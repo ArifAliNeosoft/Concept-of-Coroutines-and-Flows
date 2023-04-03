@@ -64,9 +64,9 @@
 >        
        
    #### SharedFlow :
-    - By default, it does not emit any value since it does not need an initial value.
-     - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
-     - With the replay operator, it is possible to emit many previous values at once.
+      - By default, it does not emit any value since it does not need an initial value.
+      - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
+      - With the replay operator, it is possible to emit many previous values at once.
       - It does not have a value property.
       - The emitter emits all the values without caring about the distinct differences from the previous item. It emits consecutive repeated values also.
       - It is Not similar to LiveData.     
@@ -105,18 +105,18 @@
 > }  
 > We will not get anything as the SharedFlow does not store the last value.
 >
-    #### NOTE:
-      - StateFlow is a type of SharedFlow. StateFlow is a specialization of SharedFlow.
+   #### NOTE:
+     - StateFlow is a type of SharedFlow. StateFlow is a specialization of SharedFlow.
   
-    #### UseCase For StateFlow
+   #### UseCase For StateFlow
        
-      - Get the list of the users from viewModel.
+     - Get the list of the users from viewModel.
       - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          The List will be collected((StateFlow keeps the last value))
       - Advantage: No need for a new network call.
     
-    #### UseCase For SharedFlow
-      - Suppose we are doing a task, if that task gets failed, we have to show Snackbar.
+   #### UseCase For SharedFlow
+     - Suppose we are doing a task, if that task gets failed, we have to show Snackbar.
       - When our viewModel starts the task and gets failed. It will set the value true to Activity collector will get the value as true and show the Snackbar.
       - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          Nothing will get collected here as SharedFlow does not keep the last value.
