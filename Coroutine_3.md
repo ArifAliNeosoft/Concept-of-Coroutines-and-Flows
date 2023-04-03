@@ -21,7 +21,7 @@
 
     - Let us assume we have any Library ,which does any task and whose listener has has 2 functions to get the callback :
     - we want to use this library in the Coroutines way.
-   
+>  
 > Library.doSomething(object : Listener {
 >   override fun onSuccess(result: Result) {
 >
@@ -32,7 +32,8 @@
 > })
  
    - by creating a suspend function as below :
- 
+
+
 > suspend fun doSomething(): Result {
 >    return suspendCoroutine { continuation ->
 >        Library.doSomething(object : Listener {
