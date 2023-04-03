@@ -16,7 +16,9 @@
 
 4. Terminal Operators
 5. Cold Flow vs Hot Flow
-6. "StateFlow, SharedFlow, Callback Flow,ChannelFlow"
+6. StateFlow and SharedFlow
+7. CallbackFlow
+8. ChannelFlow
 
 ## 1.Kotlin Flow API
 - Flows are built on top of coroutines and can provide multiple values.
