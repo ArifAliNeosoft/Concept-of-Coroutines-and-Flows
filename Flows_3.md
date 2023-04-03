@@ -64,6 +64,7 @@
 >        
        
   #### SharedFlow :
+  
     - By default, it does not emit any value since it does not need an initial value.
     - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
     - With the replay operator, it is possible to emit many previous values at once.
