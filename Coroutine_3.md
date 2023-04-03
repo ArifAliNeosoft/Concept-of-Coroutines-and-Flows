@@ -21,8 +21,9 @@
 
     - Let us assume we have any Library ,which does any task and whose listener has has 2 functions to get the callback :
     - we want to use this library in the Coroutines way.
+    
 >  
-> Library.doSomething(object : Listener {
+>  Library.doSomething(object : Listener {
 >   override fun onSuccess(result: Result) {
 >
 >   }
@@ -34,7 +35,7 @@
    - by creating a suspend function as below :
 
 
-> suspend fun doSomething(): Result {
+>  suspend fun doSomething(): Result {
 >    return suspendCoroutine { continuation ->
 >        Library.doSomething(object : Listener {
 >
@@ -62,7 +63,8 @@
     - we can use the cancel() method to cancel the task using the id.
     - let's convert this Callback to the Coroutines way by creating a suspend function as below:
 
-> suspend fun doSomething(): Result {
+
+>  suspend fun doSomething(): Result {
 >    return suspendCancellableCoroutine { continuation ->
 >        val id = Library.doSomething(object : Listener {
 >
