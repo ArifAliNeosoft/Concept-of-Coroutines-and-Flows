@@ -63,10 +63,10 @@
 > As the StateFlow stores the last value and emits it as soon as a new collector starts collecting.
 >        
        
-  #### SharedFlow :
+ #### SharedFlow :
   
-    - By default, it does not emit any value since it does not need an initial value.
-    - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
+   - By default, it does not emit any value since it does not need an initial value.
+   - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
     - With the replay operator, it is possible to emit many previous values at once.
     - It does not have a value property.
     - The emitter emits all the values without caring about the distinct differences from the previous item. It emits consecutive repeated values also.
