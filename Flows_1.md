@@ -3,7 +3,7 @@
 ## Topics
 
 1. Kotlin Flow API :- Flow Builder, Operator, Collector
-2. flowOn, dispatchers
+2. flowOn and dispatchers
 3. Operators
 - filter
 - map
@@ -78,9 +78,21 @@
 >       .collect { print(it) }
 >
   
-. By default, code in builders, intermediate operators and the collection itself is performed in the coroutine context that invoked the terminal operator. This property of flows is called context preservation.
-
-## 2.flowOn
+## 2.flowOn and Dispatchers
   
+- By default, code in builders, intermediate operators and the collection itself is performed in the coroutine context that invoked the terminal operator. This property of flows is called context preservation.
+- it is fine for fast-running, non-blocking code, but for some long term operations you might want to execute the code in a different Dispatcher, like Default or IO.
+- To change the context, you can use the flowOn() operator
+ 
+>  
+> withContext(Dispatchers.Main) {
+>   val singleValue = intFlow // will be executed on IO if context wasn't specified before
+>       .map { ... } // Will be executed in IO
+>        .flowOn(Dispatchers.IO)
+>        .filter { ... } // Will be executed in Default
+>        .flowOn(Dispatchers.Default)
+>        .single() // Will be executed in the Main
+> }
+>  
   
   
