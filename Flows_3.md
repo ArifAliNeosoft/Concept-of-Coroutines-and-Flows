@@ -109,11 +109,10 @@
      - StateFlow is a type of SharedFlow. StateFlow is a specialization of SharedFlow.
   
    #### UseCase For StateFlow
-       
      - Get the list of the users from viewModel.
-      - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
+     - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          The List will be collected((StateFlow keeps the last value))
-      - Advantage: No need for a new network call.
+     - Advantage: No need for a new network call.
     
    #### UseCase For SharedFlow
      - Suppose we are doing a task, if that task gets failed, we have to show Snackbar.
