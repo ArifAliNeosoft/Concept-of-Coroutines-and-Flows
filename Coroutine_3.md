@@ -1,3 +1,11 @@
+## 8.Coroutine Context
+- CoroutineContext is an interface that represents an element or a collection of elements. It is conceptually similar to a map or a set collection: it is an indexed set of Element instances like Job , CoroutineName , CouroutineDispatcher , etc. The unusual thing is that each Element is also a CoroutineContext .
+- A context is a set of data that related to the coroutine. In simple words, Context is a set of variables that you can access inside of the coroutine. All coroutine has an associate context.
+- Scope and Context are very similar only difference is that scope used to create and manage coroutine. Whereas Context is the set of variables and data associate with that coroutine.
+#### Important element of Coroutines Context
+    - Dispatcher – It simply decides which thread the coroutine runs on.
+    - Job – It basically handle the coroutine lifecycle.
+
 ## 9.Job
 - According to the official documentation,A Job is a cancellable thing with a life-cycle that culminates in its completion.
 - Job interface can control coroutines with its functions like : start(),cancel(),join(),invokeOncompletion().
