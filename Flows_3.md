@@ -106,8 +106,10 @@
 > We will not get anything as the SharedFlow does not store the last value.
 >
     #### NOTE:
-       - StateFlow is a type of SharedFlow. StateFlow is a specialization of SharedFlow.
+      - StateFlow is a type of SharedFlow. StateFlow is a specialization of SharedFlow.
+  
     #### UseCase For StateFlow
+       
        - Get the list of the users from viewModel.
        - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          The List will be collected((StateFlow keeps the last value))
