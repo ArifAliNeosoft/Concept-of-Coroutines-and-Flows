@@ -77,6 +77,8 @@
 > emptyFlow<Int>()
 >       .collect { print(it) }
 >
+
+- There are two types of operators available inside the Flow: “terminal ” and “intermediate”
   
 ## 2.flowOn and Dispatchers
   
