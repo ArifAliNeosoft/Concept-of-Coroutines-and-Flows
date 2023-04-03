@@ -19,8 +19,8 @@
 - To convert any Callback to Coroutines in Kotlin we use below functions:
 #### suspendCoroutine
 
-  - Let us assume we have any Library ,which does any task and whose listener has has 2 functions to get the callback :
-  - we want to use this library in the Coroutines way.
+    - Let us assume we have any Library ,which does any task and whose listener has has 2 functions to get the callback :
+    - we want to use this library in the Coroutines way.
    
 > Library.doSomething(object : Listener {
 >   override fun onSuccess(result: Result) {
@@ -31,7 +31,7 @@
 >    }
 > })
  
- - by creating a suspend function as below :
+   - by creating a suspend function as below :
  
 > suspend fun doSomething(): Result {
 >    return suspendCoroutine { continuation ->
@@ -49,9 +49,45 @@
 >    }
 > }
 
-- We have followed the following steps to convert the Callback to Coroutines in Kotlin:
+  - We have followed the following steps to convert the Callback to Coroutines in Kotlin:
 
   - Create a suspend function to return the Result.
   - Use suspendCoroutine as the return block.
   - Use continuation.resume(result) for the success.
   - Use continuation.resumeWithException(throwable) for the error. 
+
+#### suspendCancellableCoroutine
+    - Suppose the library also supports the cancellation of the task.
+    - we can use the cancel() method to cancel the task using the id.
+    - let's convert this Callback to the Coroutines way by creating a suspend function as below:
+
+> suspend fun doSomething(): Result {
+>    return suspendCancellableCoroutine { continuation ->
+>        val id = Library.doSomething(object : Listener {
+>
+>            override fun onSuccess(result: Result) {
+>                continuation.resume(result)
+>            }
+>
+>            override fun onError(throwable: Throwable) {
+>                continuation.resumeWithException(throwable)
+>            }
+>
+>        })
+>
+>        continuation.invokeOnCancellation {
+>            Library.cancel(id)
+>        }
+>    }
+> }
+
+  - We have used all steps as for suspendCroutine but used continuation.invokeOnCancellation as our library supports the cancellation of the task.
+
+> Now we can use above converted functions as below
+> 
+>   launch {
+>   val result = doSomething()
+> }
+
+## From the official doc: suspendCancellableCoroutine suspends the coroutine like suspendCoroutine but provides a CancellableContinuation to the block.
+   - We can use either suspendCancellableCoroutine or suspendCoroutine according to our usecase in the project.
