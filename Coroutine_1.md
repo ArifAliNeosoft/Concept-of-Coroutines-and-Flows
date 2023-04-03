@@ -26,8 +26,7 @@
 8. CoroutineContext
 9. job
 10. Cancel coroutines
-- suspendCoroutine
-- suspendCancellableCoroutine
+11. suspendCoroutine and suspendCancellableCoroutine
 
 ## 1. Asynchronous Programming
 
