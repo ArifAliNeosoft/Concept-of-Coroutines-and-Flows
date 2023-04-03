@@ -20,11 +20,11 @@
 
    #### StateFlow :
      - When the collector begins collecting,an initial value is emitted.
-      - We can create a variable like : val stateFlow = MutableStateFlow(0)
-      - The only value that is emitted is the last known value.
-      - The value property allows us to check the current value. Without collecting, it keeps a history of one value that can be accessed directly.
-      - It does not emit consecutive repeated values. When the value differs from the previous item, it emits the value.
-      - Lifecycle awareness of the Android component makes it similar to LiveData. In order to add Lifecycle awareness to it,
+     - We can create a variable like : val stateFlow = MutableStateFlow(0)
+     - The only value that is emitted is the last known value.
+     - The value property allows us to check the current value. Without collecting, it keeps a history of one value that can be accessed directly.
+     - It does not emit consecutive repeated values. When the value differs from the previous item, it emits the value.
+     - Lifecycle awareness of the Android component makes it similar to LiveData. In order to add Lifecycle awareness to it,
        we should use repeatOnLifecycle scope with StateFlow.
        
 > Ex: Assume we have StateFlow :
@@ -64,12 +64,12 @@
 >        
        
   #### SharedFlow :
-     - By default, it does not emit any value since it does not need an initial value.
-     - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
-     - With the replay operator, it is possible to emit many previous values at once.
-     - It does not have a value property.
-     - The emitter emits all the values without caring about the distinct differences from the previous item. It emits consecutive repeated values also.
-     - It is Not similar to LiveData.     
+    - By default, it does not emit any value since it does not need an initial value.
+    - We can create a variable like : val sharedFlow = MutableSharedFlow<Int>()
+    - With the replay operator, it is possible to emit many previous values at once.
+    - It does not have a value property.
+    - The emitter emits all the values without caring about the distinct differences from the previous item. It emits consecutive repeated values also.
+    - It is Not similar to LiveData.     
      
 > Ex: Assume we have SharedFlow  :
 >  val stateFlow = MutableSharedFlow<Int>
@@ -110,16 +110,16 @@
   
     #### UseCase For StateFlow
        
-       - Get the list of the users from viewModel.
-       - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
+      - Get the list of the users from viewModel.
+      - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          The List will be collected((StateFlow keeps the last value))
-       - Advantage: No need for a new network call.
+      - Advantage: No need for a new network call.
     
     #### UseCase For SharedFlow
-       - Suppose we are doing a task, if that task gets failed, we have to show Snackbar.
-       - When our viewModel starts the task and gets failed. It will set the value true to Activity collector will get the value as true and show the Snackbar.
-       - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
+      - Suppose we are doing a task, if that task gets failed, we have to show Snackbar.
+      - When our viewModel starts the task and gets failed. It will set the value true to Activity collector will get the value as true and show the Snackbar.
+      - If orientation changes, the ViewModel gets retained, and our collector present in the Activity will resubscribe to collect. 
          Nothing will get collected here as SharedFlow does not keep the last value.
          And that is fine. We should not show the Snackbar again on orientation changes.
-       - Advantage: It does not show Snackbar again as intended.
+      - Advantage: It does not show Snackbar again as intended.
   
