@@ -200,13 +200,13 @@
 > (1 sec)
 > 3_C  
   
-     - #### retry
+  - #### retry
           - Retries collection of the given flow up to retries times when an exception that matches the given predicate occurs in the upstream flow. This operator is transparent to exceptions that occur in downstream flow and does not retry on exceptions that are thrown to cancel the flow.
   
-      - #### debounce
+  - #### debounce
           - The debounce operator is used with a time constant in this case. When the user types “a”, “ab”, or “abc” in a short period of time, the debounce operator handles the case. As a result, there will be a large number of network calls. However, the user is ultimately interested in the “abc” search result. As a result, the results of “a” and “ab” must be discarded. There should ideally be no network calls for “a” and “ab” because the user typed those in a very short period of time.
   
-      - #### distinctUntilChanged
+  - #### distinctUntilChanged
            - The distinctUntilChanged operator is used to avoid duplicate network calls. Let say the last on-going search query was “abc” and the user deleted “c” and again typed “c”. So again it’s “abc”. So if the network call is already going on with the search query “abc”, it will not make the duplicate call again with the search query “abc”. So, distinctUntilChanged suppress duplicate consecutive items emitted by the source.
   
 > searchView.getQueryTextChangeStateFlow()
