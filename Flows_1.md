@@ -106,8 +106,8 @@
 - These operators are cold, just like flows are. 
 - A call to such an operator is not a suspending function itself. It works quickly, returning the definition of a new transformed flow.
   
-  - #### map 
-      - Returns a flow containing the results of applying the given transform function to each value of the original flow.
+    - #### map 
+        - Returns a flow containing the results of applying the given transform function to each value of the original flow.
   
 > lifecycleScope.launch {
 >            namesOneFlow
@@ -179,6 +179,7 @@
 > 1_B
 > (1 sec)
 > 2_B ........ till (1 sec) 3_C
+-  
   
      - #### flatMapLatest
           - It forgets about the previous flow once a new one appears. With every new value, the previous flow processing is forgotten. So, if there is no delay between "A", "B" and "C", then you will only see "1_C", "2_C", and "3_C".
