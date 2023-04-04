@@ -64,6 +64,7 @@
   
   - #### channelFlow{}
      - This builder creates flow with the elements using send provided by the builder itself.
+     - It allows elements to be produced by code that is running in a different context or concurrently. The resulting flow is cold, which means that block is called every time a terminal operator is applied to the resulting flow
 > 
 > channelFlow {
 >   (0..10).forEach {
