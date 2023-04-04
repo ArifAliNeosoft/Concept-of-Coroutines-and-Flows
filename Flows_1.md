@@ -105,9 +105,8 @@
 - Those are applied to the upstream flow or flows and return a downstream flow where further operators can be applied.
 - These operators are cold, just like flows are. 
 - A call to such an operator is not a suspending function itself. It works quickly, returning the definition of a new transformed flow.
-  
-   - #### map 
-      - Returns a flow containing the results of applying the given transform function to each value of the original flow.
+  - #### map 
+     - Returns a flow containing the results of applying the given transform function to each value of the original flow.
   
 > lifecycleScope.launch {
 >            namesOneFlow
