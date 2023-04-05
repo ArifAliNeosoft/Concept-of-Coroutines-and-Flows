@@ -16,6 +16,22 @@
 >              }
 >     }
 
+#### collectLatest :
+  -  CollectLatest will stop current work to collect latest value.
+  -  Terminal flow operator that collects the given flow with a provided action. The crucial difference from collect is that when the original flow emits a new value then the action block for the previous value is cancelled.
+  
+>  flow {
+>    emit(1)
+>    delay(50)
+>    emit(2)
+> }.collectLatest { value ->
+>    println("Collecting $value")
+>    delay(100) // Emulate work
+>    println("$value collected")
+> }
+> Output :  "Collecting 1, Collecting 2, 2 collected"
+> 
+
 #### first() 
 - Returns only the first emission of the flow.
 
