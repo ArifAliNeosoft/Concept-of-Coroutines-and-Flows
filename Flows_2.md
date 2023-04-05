@@ -1,8 +1,9 @@
 ## 3.Terminal Operator
 - Terminal operators are the operators that actually start the flow by connecting the flow builder, operators with the collector.
 
-#### Collect :
+#### collect :
   -  It is the most basic terminal operator. It collects values from a Flow and executes an action with each item.
+  -  If every update is important like state, view, preferences updates, etc , collect should be used .
   
 >  lifecycleScope.launch {
 >            (1..5).asFlow()
@@ -19,6 +20,7 @@
 #### collectLatest :
   -  CollectLatest will stop current work to collect latest value.
   -  Terminal flow operator that collects the given flow with a provided action. The crucial difference from collect is that when the original flow emits a new value then the action block for the previous value is cancelled.
+  -  If some updates can be overridden with no loss , like database updates , collectLatest should be used.
   
 >  flow {
 >    emit(1)
